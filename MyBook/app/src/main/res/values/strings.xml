@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Meus Livros</string>
+
+    <!-- A -->
+    <string name="action_about">Sobre</string>
+    <string name="action_settings">Settings</string>
+    <string name="about_dialog_text">
+
+    </string>
+    <string name="about_dialog_title">Livro Android</string>
+
+    <!-- C -->
+
+    <string name="configuracoes">Configurações</string>
+    <string name="classicos">Clássicos</string>
+
+
+    <!-- D -->
+    <string name="descricao">Descrição</string>
+    <string name="action_deletar">Deletar</string>
+
+    <!-- E -->
+
+    <string name="tecnico">Técnico</string>
+    <string name="error_conexao_indisponivel">Conexão indisponível. Verifique seu Wi-Fi ou 3G.</string>
+    <string name="action_editar">Editar</string>
+
+    <!-- F -->
+    <string name="favoritos">Favoritos</string>
+    <string name="ficcao">Ficção</string>
+
+
+    <!-- H -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- L -->
+    <string name="livros">Livros</string>
+
+    <string name="latitudeLongitude">Lat / Lng</string>
+
+    <!-- M -->
+    <string name="mapa">Mapa</string>
+    <string name="msg_livro_favoritado">Livro adicionado aos favoritado.</string>
+    <string name="msg_livro_desfavoritado">Livro removido do favoritados.</string>
+
+    <!-- N -->
+    <string name="nome">Nome</string>
+    <string name="nao">Não</string>
+    <string name="novo_carro">Novo Carro</string>
+
+    <!-- Nav Drawer -->
+    <string name="nav_drawer_username">Ricardo Santiago</string>
+    <string name="nav_drawer_email">fusionperkons@gmail.com</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">Galeria de livros</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <!-- O -->
+    <string name="ok">OK</string>
+
+    <!-- S -->
+    <string name="action_salvar">Salvar</string>
+    <string name="sobre">Sobre</string>
+    <string name="sim">Sim</string>
+
+    <!-- V -->
+    <string name="vazio" />
+    <string name="video">Vídeo</string>
+    <string name="menu_home">Meus Livros</string>
+    <string name="menu_gallery">Galeria</string>
+    <string name="menu_slideshow">Slides</string>
+    <string name="android_studio">Android Studio</string>
+    <string name="android_studio_android_com">android.studio@android.com</string>
+    <string name="filename_books">File Book</string>
+
+
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <!-- nav_item_livro_todos-->
+        <item
+            android:id="@+id/nav_item_livros_todos"
+            android:checked="true"
+            android:icon="@drawable/ic_todos_livros"
+            android:title="@string/livros" />
+        <!-- Lista  classico -->
+        <item
+            android:id="@+id/nav_item_livro_classicos"
+            android:checked="true"
+            android:icon="@drawable/ic_livroclassico"
+            android:title="@string/classicos" />
+        <!-- Lista  técnico-->
+        <item
+            android:id="@+id/nav_item_livro_tecnico"
+            android:checked="true"
+            android:icon="@drawable/ic_livrotecnico"
+            android:title="@string/tecnico" />
+
+        <!-- Lista  ficção-->
+        <item
+            android:id="@+id/nav_item_livro_ficçao"
+            android:checked="true"
+            android:icon="@drawable/ic_baseline_explore_off_24"
+            android:title="@string/ficcao" />
+
+
+        <!-- Tela de configurações -->
+        <item
+            android:id="@+id/nav_item_settings"
+            android:icon="@drawable/ic_drawer_settings"
+            android:title="@string/configuracoes" />
+    </group>
+</menu>
