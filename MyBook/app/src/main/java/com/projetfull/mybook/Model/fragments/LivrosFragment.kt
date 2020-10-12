@@ -7,13 +7,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.projetfull.mybook.R
-import com.projetfull.mybook.activity.LivroActivity
-import com.projetfull.mybook.adapter.LivroAdapter
+import com.projetfull.mybook.Controller.activity.LivroActivity
+import com.projetfull.mybook.View.adapter.LivroAdapter
 import com.projetfull.mybook.domain.Livro
 
 import com.projetfull.mybook.domain.TipoLivro
-import kotlinx.android.synthetic.main.activity_livro_on_line.*
-import kotlinx.android.synthetic.main.activity_livros.*
 import kotlinx.android.synthetic.main.fragment_livros.*
 import org.jetbrains.anko.startActivity
 

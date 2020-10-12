@@ -17,10 +17,8 @@ import java.lang.Exception
 
 class LivroAdapter(
     val livros: List<Livro>,
-    val onClick: (Livro) -> Unit
-) :
-    RecyclerView.Adapter<LivroAdapter.LivrosViewHolder>() {
-    // Retorna a quantidade de livros na lista
+    val onClick: (Livro) -> Unit) : RecyclerView.Adapter<LivroAdapter.LivrosViewHolder>() {
+    // Retornar a quantidade de livros na lista
     override fun getItemCount(): Int {
         return this.livros.size
     }
