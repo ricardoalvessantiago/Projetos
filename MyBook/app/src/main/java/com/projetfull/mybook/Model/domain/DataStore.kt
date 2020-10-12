@@ -1,14 +1,15 @@
 import android.content.Context
 import android.util.Log
 import com.projetfull.mybook.R
-import com.projetfull.mybook.domain.Livro
+import com.projetfull.mybook.Model.domain.Livro
+import com.projetfull.mybook.Model.domain.LivroDataBase
 import java.io.File
 import java.io.IOException
 
 object DataStore {
-    var login ="teste@teste.com"
+    var login = "teste@teste.com"
         private set
-    var password ="123456"
+    var password = "123456"
         private set
 
     var books: MutableList<Livro> = arrayListOf()
@@ -16,35 +17,40 @@ object DataStore {
     var Author: MutableList<String> = arrayListOf()
         private set
 
-    private var context: Context? = null
+    // private var context: Context? = null
+    private var database: LivroDataBase? = null
 
-    fun setContext(value: Context){
-        context = value
-        loadData()
-        loadAuthor()
+    fun setContext(context: Context) {
+        database = LivroDataBase(context)
+        //  loadData()
+        //  loadAuthor()
     }
 
-    fun getBook(position: Int): Livro{
+    fun getBook(position: Int): Livro {
         return books.get(position)
     }
-    fun addBook(book: Livro){
+
+    fun addBook(book: Livro) {
         books.add(book)
-        saveData()
-    }
-    fun editBook(book: Livro, position: Int){
-        books.set(position, book)
-        saveData()
-    }
-    fun removeBook(position: Int){
-        books.removeAt(position)
-        saveData()
-    }
-    fun clearBook(){
-        books.clear()
-        saveData()
+        //   saveData()
     }
 
-    fun loadData(){
+    fun editBook(book: Livro, position: Int) {
+        books.set(position, book)
+        //   saveData()
+    }
+
+    fun removeBook(position: Int) {
+        books.removeAt(position)
+        // saveData()
+    }
+
+    fun clearBook() {
+        books.clear()
+        // saveData()
+    }
+
+    /*fun loadData(){
 
         val context = context ?: return
         val file = File(context.filesDir.absolutePath + "/${context.getString(R.string.filename_books)}")
@@ -131,5 +137,5 @@ object DataStore {
         }
 
         saveData()
-    }
+    }*/
 }
