@@ -1,5 +1,6 @@
 import android.content.Context
 import android.util.Log
+import com.projetfull.startuspet.Controller.ManagerCadastroActivity
 import com.projetfull.startuspet.Model.Animal
 import com.projetfull.startuspet.R
 import java.io.File
@@ -27,11 +28,11 @@ object DataStore {
     fun getAnimal(position: Int): Animal{
         return animais.get(position)
     }
-    fun addAnimal(animal: Animal){
+    fun addAnimal(animal: Animal, managerCadastroActivity: ManagerCadastroActivity){
         animais.add(animal)
         saveData()
     }
-    fun editAnimal(animal: Animal, position: Int){
+    fun editAnimal(animal: Animal, position: Int, managerCadastroActivity: ManagerCadastroActivity){
         animais.set(position, animal)
         saveData()
     }
@@ -129,7 +130,7 @@ object DataStore {
 
             }
         }catch (e: IOException){
-            Log.d("Persistence Book", "Arquivo não encontrado, ${e.localizedMessage}")
+            Log.d("Projeto status pet", "Arquivo não encontrado, ${e.localizedMessage}")
             return
         }
 

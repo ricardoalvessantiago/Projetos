@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">StatusPet</string>
+    <string name="filename_animais">file animais</string>
+    <string name="aNome">Nome</string>
+    <string name="aEspecie">Espécie</string>
+    <string name="aData">Data de Nasc</string>
+    <string name="aRaca">Raça</string>
+    <string name="aCor">Cor</string>
+    <string name="aSexo">Sexo</string>
+</resources>
