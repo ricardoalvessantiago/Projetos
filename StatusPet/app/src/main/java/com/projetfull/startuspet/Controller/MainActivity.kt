@@ -3,19 +3,14 @@ package com.projetfull.startuspet.Controller
 import android.Manifest.permission
 import android.Manifest.permission_group
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
-import android.hardware.Camera
 import android.media.MediaScannerConnection
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.os.Environment
-import android.os.Environment.getExternalStorageDirectory
 import android.provider.MediaStore
-import android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE_IMAGE
 import android.provider.Settings
 import android.util.Log
 import android.view.View
@@ -26,16 +21,9 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.core.content.FileProvider
 import com.projetfull.startuspet.R
-import java.io.File
-import java.io.FileNotFoundException
-import java.io.FileOutputStream
-import java.io.IOException
-import java.util.jar.Manifest
 
 
-@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
     private val ROTEAMENTO_RAIZ = "minhasFotos/"
     private val ROTA_IMAGEM = ROTEAMENTO_RAIZ + "Fotos"
@@ -130,23 +118,7 @@ class MainActivity : AppCompatActivity() {
     fun onclick(view: View) {
         carregarImagem()
     }
-    /*private val mPicture = Camera.PictureCallback { data, _ ->
-        val pictureFile: File = getOutputMediaFile(MEDIA_TYPE_IMAGE) ?: run {
-            Log.d(TAG, ("Error creating media file, check storage permissions"))
-            return@PictureCallback
-        }
 
-        try {
-            val fos = FileOutputStream(pictureFile)
-            fos.write(data)
-            fos.close()
-        } catch (e: FileNotFoundException) {
-            Log.d(TAG, "File not found: ${e.message}")
-        } catch (e: IOException) {
-            Log.d(TAG, "Error accessing file: ${e.message}")
-        }
-    }
-*/
     private fun carregarImagem() {
         val opciones = arrayOf<CharSequence>("Tirar Foto", "Carregar Imagen", "Cancelar")
         val alertOpciones = AlertDialog.Builder(this@MainActivity)
@@ -173,33 +145,7 @@ class MainActivity : AppCompatActivity() {
         alertOpciones.show()
     }
 
-    private fun tirarFotografia() {
-        val fileImagen = File(getExternalStorageDirectory(), ROTA_IMAGEM)
-        var isCreada = fileImagen.exists()
-        var nomeImagen = ""
-        if (!isCreada) {
-            isCreada = fileImagen.mkdirs()
-        }
-        if (isCreada) {
-            nomeImagen = (System.currentTimeMillis() / 1000).toString() + ".jpg"
-        }
-        path = getExternalStorageDirectory().toString() +
-                File.separator + ROTA_IMAGEM + File.separator + nomeImagen
-        val imagen = File(path)
-        var intent: Intent? = null
-        intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        ////
-       /* if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            val authorities = applicationContext.packageName + ".provider"
-            val imageUri = FileProvider.getUriForFile(this, authorities, imagen)
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
-        } else {
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(imagen))
-        }*/
-        startActivityForResult(intent, COD_FOTO)
 
-        ////
-    }
 
     @SuppressLint("LongLogTag")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
