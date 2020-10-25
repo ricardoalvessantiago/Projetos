@@ -1,169 +1,121 @@
 package com.projetfull.startuspet.Controller
 
-import android.Manifest.permission
-import android.Manifest.permission_group
-import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Context
+import android.content.ContextWrapper
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.BitmapFactory
-import android.media.MediaScannerConnection
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import android.provider.Settings
-import android.util.Log
-import android.view.View
-import android.widget.Button
-import android.widget.ImageView
 import android.widget.Toast
-import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.projetfull.startuspet.R
+import kotlinx.android.synthetic.main.activity_main.*
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
+import java.io.OutputStream
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
-    private val ROTEAMENTO_RAIZ = "minhasFotos/"
-    private val ROTA_IMAGEM = ROTEAMENTO_RAIZ + "Fotos"
-    val COD_SELECCIONA = 10
-    val COD_FOTO = 20
-    var botonCarregar: Button? = null
-    var imagem: ImageView? = null
-    var path: String? = null
+    companion object{
+        private const val CAMERA_PERMISSION_CODE = 1
+        private const val CAMERA_REQUEST_CODE = 2
+    }
+
+    //variáveis do código da sthefany
+    lateinit var bitmap: Bitmap
+    val REQUEST_IMAGE_CAPTURE = 3
+    val IMAGE_PICK_CODE = 4
+    var imageAdded: Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        imagem = findViewById<View>(R.id.imagemId) as ImageView
-        botonCarregar= findViewById(R.id.btnCarregarImg);
-        botonCarregar?.isEnabled()
-    }
-
-    private fun validaPermissions(): Boolean {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            return true
-        }
-        if (ActivityCompat.checkSelfPermission(this, permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED &&
-            checkSelfPermission(permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
-        ) {
-            return true
-        }
-        if (shouldShowRequestPermissionRationale(permission_group.CAMERA) ||
-            shouldShowRequestPermissionRationale(permission.WRITE_EXTERNAL_STORAGE)
-        ) {
-            cargarDialogoRecomendacion()
-        } else {
-            requestPermissions(
-                arrayOf(permission.WRITE_EXTERNAL_STORAGE, permission_group.CAMERA),
-            100)
-        }
-        return true//false
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == 100) {
-            if (grantResults.size == 2 && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-                botonCarregar!!.isEnabled = true
+        btnCarregarImg.setOnClickListener {
+            if (ContextCompat.checkSelfPermission(
+                    this,
+                   android.Manifest.permission.CAMERA
+                ) == PackageManager.PERMISSION_GRANTED
+            ) {
+                val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                startActivityForResult(intent, CAMERA_REQUEST_CODE)
             } else {
-                solicitarPermisosManual()
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf( android.Manifest.permission.CAMERA),
+                    CAMERA_PERMISSION_CODE
+                )
             }
+
+
         }
     }
+    //código de gerenciamento:
 
-    private fun solicitarPermisosManual() {
-        val opcoes = arrayOf<CharSequence>("sim", "não")
-        val alertOpcoes = AlertDialog.Builder(this@MainActivity)
-        alertOpcoes.setTitle("Você deseja configurar as permissões manualmente?")
-        alertOpcoes.setItems(opcoes) { dialogInterface, i ->
-            if (opcoes[i] == "sim") {
-                val intent = Intent()
-                intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
-                val uri = Uri.fromParts("package", packageName, null)
-                intent.data = uri
-                startActivity(intent)
-            } else {
-                Toast.makeText(
-                    applicationContext,
-                    "As licenças não foram aceitas",
-                    Toast.LENGTH_SHORT
-                ).show()
-                dialogInterface.dismiss()
-            }
-        }
-        alertOpcoes.show()
-    }
 
-    @RequiresApi(Build.VERSION_CODES.M)
-    private fun cargarDialogoRecomendacion() {
-        val dialogo = AlertDialog.Builder(this@MainActivity)
-        dialogo.setTitle("Permisões Desativadas")
-        dialogo.setMessage("Você deve aceitar as permissões para o funcionamento correto do App")
-        dialogo.setPositiveButton("Aceitar") { dialogInterface, i ->
-            requestPermissions(
-                arrayOf(
-                    permission.WRITE_EXTERNAL_STORAGE,
-                    permission_group.CAMERA
-                ), 100
-            )
-        }
-        dialogo.show()
-    }
-
-    fun onclick(view: View) {
-        carregarImagem()
-    }
-
-    private fun carregarImagem() {
-        val opciones = arrayOf<CharSequence>("Tirar Foto", "Carregar Imagen", "Cancelar")
-        val alertOpciones = AlertDialog.Builder(this@MainActivity)
-        alertOpciones.setTitle("Selecione uma Opção")
-        alertOpciones.setItems(opciones) { dialogInterface, i ->
-            if (opciones[i] == "Tirar Foto") {
-                tirarFotografia()
-            } else {
-                if (opciones[i] == "Carregar Imagen") {
-                    val intent = Intent(
-                        Intent.ACTION_GET_CONTENT,
-                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI
-                    )
-                    intent.type = "image/"
-                    startActivityForResult(
-                        Intent.createChooser(intent, "Selecione a aplicação"),
-                        COD_SELECCIONA
-                    )
-                } else {
-                    dialogInterface.dismiss()
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        when(requestCode){
+            CAMERA_PERMISSION_CODE -> {
+                if (grantResults.size >0 && grantResults[0] ==
+                    PackageManager.PERMISSION_GRANTED){
+                    //permission from popup granted
+                    pickImageFromGallery()
+                }
+                else{
+                    //permission from popup denied
+                    Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
                 }
             }
         }
-        alertOpciones.show()
     }
+    private fun bitmapToFile(bitmap:Bitmap): Uri {
+        // Get the context wrapper
+        val wrapper = ContextWrapper(applicationContext)
 
+        // Initialize a new file instance to save bitmap object
+        var file = wrapper.getDir("Images", Context.MODE_PRIVATE)
+        file = File(file,"${UUID.randomUUID()}.jpg")
 
+        try{
+            // Compress the bitmap and save in jpg format
+            val stream: OutputStream = FileOutputStream(file)
+            bitmap.compress(Bitmap.CompressFormat.JPEG,100,stream)
+            stream.flush()
+            stream.close()
+        }catch (e: IOException){
+            e.printStackTrace()
+        }
 
-    @SuppressLint("LongLogTag")
+        // Return the saved bitmap uri
+        return Uri.parse(file.absolutePath)
+    }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == RESULT_OK) {
-            when (requestCode) {
-                COD_SELECCIONA -> {
-                    val miPath = data!!.data
-                    imagem!!.setImageURI(miPath)
-                }
-                COD_FOTO -> {
-                    MediaScannerConnection.scanFile(
-                        this, arrayOf(path), null
-                    ) { path, uri -> Log.i("Rota de armazenenamento", "Path: $path") }
-                    val bitmap = BitmapFactory.decodeFile(path)
-                    imagem!!.setImageBitmap(bitmap)
-                }
-            }
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            val imageBitmap = data?.extras?.get("data") as Bitmap
+            imagemId.setImageBitmap(imageBitmap)
+            bitmap = imageBitmap
+            imageAdded = true
+        }
+        if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE){
+            imagemId.setImageURI(data?.data)
+            bitmap = (imagemId.drawable as BitmapDrawable).bitmap
+            imageAdded = true
         }
     }
+    private fun pickImageFromGallery() {
+        //Intent to pick image
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "image/*"
+        startActivityForResult(intent, IMAGE_PICK_CODE)
+    }
+
+
 }
