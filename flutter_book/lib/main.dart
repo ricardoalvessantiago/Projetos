@@ -46,7 +46,7 @@ class FlutterBook extends StatelessWidget {
         child : Scaffold(
           appBar : AppBar(
             backgroundColor: Colors.black,
-            title : Text("Livro de Registro"),
+            title : Text("Gerenciador de atualizaçãoes"),
             bottom : TabBar(
               tabs : [
                 Tab(icon : Icon(Icons.date_range), text : "Compromissos"),

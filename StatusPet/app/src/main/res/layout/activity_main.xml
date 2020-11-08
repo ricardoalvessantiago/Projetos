@@ -127,13 +127,6 @@
                         android:layout_height="wrap_content"
                         android:text="@string/aSexo"
                         android:textStyle="bold" />
-                    <EditText
-                        android:id="@+id/txtCsexo"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:importantForAutofill="no"
-                        android:inputType="text" />
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
