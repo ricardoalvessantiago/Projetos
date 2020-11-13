@@ -1,5 +1,8 @@
+
 import 'package:epastoral/models/user.dart';
+import 'package:epastoral/provider/users.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 
 class UserTile extends StatelessWidget {
@@ -22,12 +25,16 @@ class UserTile extends StatelessWidget {
               IconButton(
                 icon: Icon(Icons.edit),
                 color: Colors.orange,
-                onPressed: () {},
+                onPressed: () {
+
+                },
               ),
               IconButton(
                 icon: Icon(Icons.delete),
                 color: Colors.red,
-                onPressed: () {},
+                onPressed: () {
+                  Provider.of<Users>(context, listen: false).remove(user);
+                },
               )
             ],
           ),
