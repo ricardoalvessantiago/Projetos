@@ -1,6 +1,7 @@
 
 import 'package:epastoral/models/user.dart';
 import 'package:epastoral/provider/users.dart';
+import 'package:epastoral/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -26,8 +27,11 @@ class UserTile extends StatelessWidget {
                 icon: Icon(Icons.edit),
                 color: Colors.orange,
                 onPressed: () {
-
-                },
+                  Navigator.of(context).pushNamed(
+                      AppRoutes.USER_FORM,
+                      arguments: user,
+                  );
+                  }
               ),
               IconButton(
                 icon: Icon(Icons.delete),
