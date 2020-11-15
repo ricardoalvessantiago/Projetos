@@ -1,12 +1,14 @@
 import 'package:epastoral/components/user_tile.dart';
-import 'package:epastoral/data/user_teste.dart';
+import 'package:epastoral/provider/users.dart';
+import 'package:epastoral/routes/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 
 class UserList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final users={...USERS_TESTE};
+    final Users users = Provider.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text("Lista de usuários"),
@@ -14,16 +16,15 @@ class UserList extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.add),
             onPressed: () {
-              Navigator.pushNamed(context, '/user-form');
+              Navigator.of(context).pushNamed(AppRoutes.USER_FORM);
             },
           ),
         ],
       ),
       body: ListView.builder(
-          itemCount: users.length,
-          itemBuilder: (ctx, i) => UserTile(users.values.elementAt(i)),
+          itemCount: users.count,
+          itemBuilder: (ctx, i) => UserTile(users.byIndex(i)),
       ),
     );
-
   }
 }

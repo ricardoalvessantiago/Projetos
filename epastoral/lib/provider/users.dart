@@ -8,11 +8,11 @@ import 'package:http/http.dart' as http;
 
 class Users with ChangeNotifier {
   static const _baseURL = 'https://crud-flutter-free.firebaseio.com/';
+
   List<User> loadedUsers = [];
 
   Users(){
-    fetchUsers();
-  }
+    fetchUsers();  }
 
 
   Future <void> fetchUsers() async{
@@ -26,11 +26,11 @@ class Users with ChangeNotifier {
         User(
             id: userID,
             name: userData['name'],
-            email: userData['mail'],
-            avatarUrl: userData['avatarURL']
+            email: userData['email'],
+            avatarUrl: userData['avatarUrl']
         ),
       );
-      print("User name: ${userData['name']} e id $userID}");
+      print("User name: ${userData['name']} e id: $userID}");
     });
     loadedUsers = downloadedUsers;
     notifyListeners();
@@ -60,7 +60,7 @@ class Users with ChangeNotifier {
         body: json.encode({
           'name': user.name,
           'email': user.email,
-          'avatarURL': user.avatarUrl,
+          'avatarUrl': user.avatarUrl,
         })
       );
     }else{
@@ -70,7 +70,7 @@ class Users with ChangeNotifier {
           body: json.encode({
            'name': user.name,
            'email': user.email,
-           'avatarURL': user.avatarUrl,
+           'avatarUrl': user.avatarUrl,
       })
       );
     }
@@ -87,7 +87,5 @@ class Users with ChangeNotifier {
       notifyListeners();
     }
   }
-
-
 }
 
