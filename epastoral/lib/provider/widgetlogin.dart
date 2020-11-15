@@ -38,7 +38,7 @@ class _WidgetLoginState extends State<WidgetLogin> {
                   color: Colors.white,
                   fontWeight: FontWeight.bold)),
           onPressed: () {
-            Navigator.pushNamed(context, '/user-form');
+            Navigator.pushNamed(context, '/user-list');
           },
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30.0)
