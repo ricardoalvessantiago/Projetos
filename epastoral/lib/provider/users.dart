@@ -53,7 +53,7 @@ class Users with ChangeNotifier {
       return;
     }
     if(user.id != null &&
-      user.id.trim().isEmpty){
+      user.id.trim().isNotEmpty){
       print("http.patch");
       await http.patch(
           '$_baseURL/users/${user.id}.json',

@@ -1,3 +1,4 @@
+
 import 'package:epastoral/views/user_list.dart';
 
 class AppRoutes {
@@ -5,4 +6,5 @@ class AppRoutes {
   static const UserList = '/user-list';
   static const USER_FORM = '/user-form';
   static const WidgetLogin = '/WidgetLogin';
+  static const card = '/Card';
 }

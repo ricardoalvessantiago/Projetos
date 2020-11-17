@@ -75,6 +75,8 @@ class UserForm extends StatelessWidget {
                     decoration: InputDecoration(labelText: 'URL do Avatar'),
                     onSaved: (value) => _formData['avatarUrl'] = value,
                   ),
+
+                  
                 ],
               ),
             )

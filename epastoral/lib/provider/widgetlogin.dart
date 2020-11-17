@@ -58,6 +58,7 @@ class _WidgetLoginState extends State<WidgetLogin> {
               SizedBox(height: 40.0,),emailField,
               SizedBox(height: 20.0,),passwordField,
               SizedBox(height: 30.0,),buttonLogin,
+
             ],
           ),
         ),

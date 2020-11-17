@@ -1,6 +1,7 @@
 import 'package:epastoral/provider/users.dart';
 import 'package:epastoral/provider/widgetlogin.dart';
 import 'package:epastoral/routes/app_routes.dart';
+
 import 'package:epastoral/views/user_form.dart';
 import 'package:epastoral/views/user_list.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'ePastoral',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.green,
 
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
           AppRoutes.WidgetLogin: (_) => WidgetLogin(),
           AppRoutes.UserList: (_) => UserList(),
           AppRoutes.USER_FORM: (_) => UserForm(),
+
 
         },
       ),
