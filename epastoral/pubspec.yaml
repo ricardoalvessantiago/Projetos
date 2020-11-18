@@ -27,6 +27,7 @@ dependencies:
   http:
   transparent_image:
   share:
+  carousel_slider: ^2.3.1
 
 
 
@@ -52,7 +53,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - imagens/
+    - images/
+    - images/cestas/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
