@@ -1,7 +1,8 @@
+
+import 'package:epastoral/components/HomePage.dart';
 import 'package:epastoral/provider/users.dart';
 import 'package:epastoral/provider/widgetlogin.dart';
 import 'package:epastoral/routes/app_routes.dart';
-
 import 'package:epastoral/views/user_form.dart';
 import 'package:epastoral/views/user_list.dart';
 import 'package:flutter/material.dart';
@@ -23,13 +24,11 @@ class MyApp extends StatelessWidget {
 
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home:UserList(),
+        home:HomePage(),//UserList(),
         routes: {
           AppRoutes.WidgetLogin: (_) => WidgetLogin(),
           AppRoutes.UserList: (_) => UserList(),
           AppRoutes.USER_FORM: (_) => UserForm(),
-
-
         },
       ),
     );

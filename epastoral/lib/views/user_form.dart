@@ -26,7 +26,7 @@ class UserForm extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text('Formulário de usuários'),
+          title: Text('Formulário para cadastro'),
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.save),

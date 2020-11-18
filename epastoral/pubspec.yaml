@@ -25,6 +25,8 @@ dependencies:
     sdk: flutter
   provider:
   http:
+  transparent_image:
+  share:
 
 
 
