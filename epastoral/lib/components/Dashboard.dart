@@ -14,14 +14,14 @@ class Dashboard extends StatelessWidget {
     return
       CarouselSlider(
         options: CarouselOptions(
-          height: 400.0,
+          height: 369.0,
           aspectRatio: 16 / 9,
-          viewportFraction: 0.8,
+          viewportFraction: 1.8,
           initialPage: 0,
           enlargeCenterPage: true,
-          scrollDirection: Axis.horizontal,
+          scrollDirection: Axis.vertical,
           enableInfiniteScroll: true,
-          reverse: false,
+          reverse: true,
           autoPlay: true,
           autoPlayInterval: Duration(seconds: 3),
           autoPlayAnimationDuration: Duration(milliseconds: 500),
@@ -30,7 +30,7 @@ class Dashboard extends StatelessWidget {
         items: [
           Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(18.0),
+                borderRadius: BorderRadius.circular(10.0),
                 image: DecorationImage(
                   image: AssetImage('images/$folderPlay/$i.png'),
                 ),

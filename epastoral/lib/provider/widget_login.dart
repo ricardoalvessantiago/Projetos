@@ -1,3 +1,4 @@
+import 'package:epastoral/components/HomePage.dart';
 import 'package:flutter/material.dart';
 
 import '../main.dart';
@@ -38,7 +39,7 @@ class _WidgetLoginState extends State<WidgetLogin> {
                   color: Colors.white,
                   fontWeight: FontWeight.bold)),
           onPressed: () {
-            Navigator.pushNamed(context, '/user-list');
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => HomePage()));
           },
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30.0)
@@ -49,11 +50,11 @@ class _WidgetLoginState extends State<WidgetLogin> {
     return Scaffold(body: Center(
       child: SingleChildScrollView(
         child: Container(
-          color: Colors.white,
+          color: Colors.lightBlueAccent,
           padding: const EdgeInsets.all(40.0),
           child: Column(
             children: <Widget>[
-              SizedBox(height: 150.0, child: Image.asset("imagens/login.jpg",fit: BoxFit.contain),
+              SizedBox(height: 350.0, child: Image.asset("images/cestas/3.png",fit: BoxFit.contain),
               ),
               SizedBox(height: 40.0,),emailField,
               SizedBox(height: 20.0,),passwordField,
