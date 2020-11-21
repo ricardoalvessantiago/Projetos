@@ -33,7 +33,7 @@ class _WidgetLoginState extends State<WidgetLogin> {
       minWidth: MediaQuery.of(context).size.width,
       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
       child: RaisedButton(
-          color: Color(0xff0A0C7),
+          color: Color(0xFF90CAF9),
           child: Text("Login",textAlign: TextAlign.center,
               style: style.copyWith(
                   color: Colors.white,
@@ -51,10 +51,10 @@ class _WidgetLoginState extends State<WidgetLogin> {
       child: SingleChildScrollView(
         child: Container(
           color: Colors.lightBlueAccent,
-          padding: const EdgeInsets.all(40.0),
+          padding: const EdgeInsets.all(30.0),
           child: Column(
             children: <Widget>[
-              SizedBox(height: 350.0, child: Image.asset("images/cestas/3.png",fit: BoxFit.contain),
+              SizedBox(height: 290.0, child: Image.asset("images/cestas/3.png",fit: BoxFit.contain),
               ),
               SizedBox(height: 40.0,),emailField,
               SizedBox(height: 20.0,),passwordField,

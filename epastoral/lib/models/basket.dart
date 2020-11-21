@@ -1,6 +1,7 @@
 
+import 'package:epastoral/models/registrant.dart';
 import 'package:epastoral/models/relatives.dart';
-import 'package:epastoral/models/user.dart';
+
 
 import 'package:flutter/cupertino.dart';
 
