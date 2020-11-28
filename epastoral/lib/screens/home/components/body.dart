@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 
 import '../../../constants.dart';
-import 'featurred_plants.dart';
+import 'featurred_baskets.dart';
 import 'header_with_seachbox.dart';
-import 'recomend_plants.dart';
+import 'recomend.dart';
 import 'title_with_more_bbtn.dart';
 
 class Body extends StatelessWidget {
@@ -20,10 +20,10 @@ class Body extends StatelessWidget {
         children: <Widget>[
           HeaderWithSearchBox(size: size),
           TitleWithMoreBtn(title: "Entrega de cestas", press: () {}),
-          RecomendsPlants(),
+          Recomends(),
           TitleWithMoreBtn(title: "Faça seu cadastro", press: () {
           }),
-          FeaturedPlants(),
+          FeaturedBasket(),
           SizedBox(height: kDefaultPadding),
         ],
       ),

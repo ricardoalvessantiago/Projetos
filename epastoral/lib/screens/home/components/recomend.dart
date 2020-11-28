@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
 
-class RecomendsPlants extends StatelessWidget {
-  const RecomendsPlants({
+class Recomends extends StatelessWidget {
+  const Recomends({
     Key key,
   }) : super(key: key);
 
@@ -16,7 +16,7 @@ class RecomendsPlants extends StatelessWidget {
 
       child: Row(
         children: <Widget>[
-          RecomendPlantCard(
+          RecomendBasketCard(
             image: "assets/images/image_3.png",
             title: "Paróquia São João",
             country: "Brasil",
@@ -30,7 +30,7 @@ class RecomendsPlants extends StatelessWidget {
               );
             },
           ),
-          RecomendPlantCard(
+          RecomendBasketCard(
             image: "assets/images/image_2.png",
             title: "PARÓQUIA CAPUCCHINHOS",
             country: "BRASIL",
@@ -44,7 +44,7 @@ class RecomendsPlants extends StatelessWidget {
               );
             },
           ),
-          RecomendPlantCard(
+          RecomendBasketCard(
             image: "assets/images/image_3.png",
             title: "PARÓQUIA SAGRADO CORAÇÃO",
             country: "BRASIL",
@@ -57,8 +57,8 @@ class RecomendsPlants extends StatelessWidget {
   }
 }
 
-class RecomendPlantCard extends StatelessWidget {
-  const RecomendPlantCard({
+class RecomendBasketCard extends StatelessWidget {
+  const RecomendBasketCard({
     Key key,
     this.image,
     this.title,
