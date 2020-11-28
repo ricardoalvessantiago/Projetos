@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 import 'Dashboard.dart';
+import 'my_bottom_nav_bar.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -11,7 +12,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.indigo,
-        title: Text('HOME PAGE '),
+        title: Text('Doar cestas '),
       ),
       backgroundColor: Colors.blueAccent,
       body: Container(
@@ -20,21 +21,6 @@ class HomePage extends StatelessWidget {
             children: <Widget>[
               Dashboard(folderPlay: 'cestas', i: '1'),
               Container(
-                alignment: Alignment.center,
-                margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-                padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-                height: 54,
-                decoration: BoxDecoration(
-                  color: Colors.blueAccent,
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
-                    BoxShadow(
-                      offset: Offset(0, 10),
-                      blurRadius: 50,
-                      color: kPrimaryColor.withOpacity(0.23),
-                    ),
-                  ],
-                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
@@ -101,8 +87,11 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
+
         ),
+
       ),
+
     );
   }
 }

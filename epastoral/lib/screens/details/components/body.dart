@@ -1,3 +1,6 @@
+import 'package:epastoral/components/HomePage.dart';
+import 'package:epastoral/routes/app_routes.dart';
+import 'package:epastoral/screens/home/components/header_with_seachbox.dart';
 import 'package:flutter/material.dart';
 
 
@@ -12,6 +15,7 @@ class Body extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: <Widget>[
+
           ImageAndIcons(size: size),
           TitleAndPrice(title: "Paróquia São João", country: "CURITBA", price: 000),
           SizedBox(height: kDefaultPadding),
@@ -27,7 +31,12 @@ class Body extends StatelessWidget {
                     ),
                   ),
                   color: kPrimaryColor,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                        builder: (context) => HomePage()),);
+                  },
                   child: Text(
                     "CLIQUE PARA DOAR",
                     style: TextStyle(

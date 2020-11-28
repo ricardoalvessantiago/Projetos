@@ -27,7 +27,11 @@ class HeaderWithSearchBox extends StatelessWidget {
             ),
             height: size.height * 0.2 - 27,
             decoration: BoxDecoration(
-              color: kPrimaryColor,
+                gradient: LinearGradient(begin: Alignment.topCenter, colors: [
+                  Colors.blue[900],
+                  Colors.blue[700],
+                  Colors.blue[300]
+                ]),
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(36),
                 bottomRight: Radius.circular(36),
@@ -45,7 +49,10 @@ class HeaderWithSearchBox extends StatelessWidget {
               ],
             ),
           ),
-          Positioned(
+
+          //<<< barra de busca comentada para mudar o layout temporariamente >>>
+
+          /*Positioned(
             bottom: 0,
             left: 0,
             right: 0,
@@ -87,7 +94,9 @@ class HeaderWithSearchBox extends StatelessWidget {
                 ],
               ),
             ),
-          ),
+          ),*/
+
+
         ],
       ),
     );

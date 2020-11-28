@@ -13,6 +13,7 @@ class RecomendsPlants extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
+
       child: Row(
         children: <Widget>[
           RecomendPlantCard(

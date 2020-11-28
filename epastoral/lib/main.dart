@@ -24,10 +24,11 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.indigo,
           scaffoldBackgroundColor: kBackgroundColor,
-          primaryColor: kPrimaryColor,
+          primaryColor: Colors.blue,
           textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
+
         home: WidgetLogin(), //UserList(),
         routes: {
           AppRoutes.WidgetLogin: (_) => WidgetLogin(),
