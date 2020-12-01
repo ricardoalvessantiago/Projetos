@@ -25,8 +25,8 @@ dependencies:
     sdk: flutter
   provider:
   http:
-  transparent_image:
-  share:
+  # transparent_image:
+  # share:
   carousel_slider: ^2.3.1
   flutter_launcher_icons: ^0.8.1
   flutter_svg: ^0.19.0

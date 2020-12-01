@@ -1,4 +1,4 @@
-import 'package:epastoral/components/HomePage.dart';
+import 'package:epastoral/components/donate.dart';
 import 'package:epastoral/routes/app_routes.dart';
 import 'package:epastoral/screens/home/components/header_with_seachbox.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +35,7 @@ class Body extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                        builder: (context) => HomePage()),);
+                        builder: (context) => Donate()),);
                   },
                   child: Text(
                     "CLIQUE PARA DOAR",
@@ -55,7 +55,9 @@ class Body extends StatelessWidget {
                   ),
                   color: kTextColor
                   ,
-                  onPressed: () {},
+                  onPressed: () {
+
+                  },
                   child: Text("Descrição"),
                 ),
               ),

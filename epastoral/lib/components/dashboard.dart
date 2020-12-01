@@ -10,9 +10,10 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return CarouselSlider(
       options: CarouselOptions(
-        height: 400.0,
+        height: 185.0,
+
         aspectRatio: 16 / 9,
-        viewportFraction: 1.8,
+        viewportFraction: 1.9,
         initialPage: 0,
         enlargeCenterPage: true,
         scrollDirection: Axis.horizontal,

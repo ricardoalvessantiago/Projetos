@@ -1,4 +1,4 @@
-import 'package:epastoral/components/HomePage.dart';
+import 'package:epastoral/components/donate.dart';
 import 'package:epastoral/screens/details/details_screen.dart';
 import 'package:epastoral/views/user_form.dart';
 import 'package:epastoral/views/user_list.dart';
@@ -43,7 +43,7 @@ class MyBottomNavBar extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => HomePage(),
+                  builder: (context) => Donate(),
                 ),
               );
             },

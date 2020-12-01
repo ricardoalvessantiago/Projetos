@@ -8,4 +8,5 @@ class AppRoutes {
   static const USER_FORM = '/user-form';
   static const WidgetLogin = '/WidgetLogin';
   static const HomeScreen = '/HomeScreen';
+  static const Donate = '/Donate';
 }

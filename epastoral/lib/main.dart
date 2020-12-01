@@ -1,3 +1,4 @@
+import 'package:epastoral/components/donate.dart';
 import 'package:epastoral/provider/users.dart';
 import 'package:epastoral/provider/widget_login.dart';
 import 'package:epastoral/routes/app_routes.dart';
@@ -9,9 +10,8 @@ import 'package:provider/provider.dart';
 
 import 'constants.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() =>  runApp(MyApp());
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -22,9 +22,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'ePastoral',
         theme: ThemeData(
-          primarySwatch: Colors.indigo,
+          primarySwatch: Colors.blue,
           scaffoldBackgroundColor: kBackgroundColor,
-          primaryColor: Colors.blue,
+          primaryColor: Colors.indigo,
           textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
           AppRoutes.HomeScreen: (_) => HomeScreen(),
           AppRoutes.UserList: (_) => UserList(),
           AppRoutes.USER_FORM: (_) => UserForm(),
+          AppRoutes.Donate: (_) => Donate(),
         },
       ),
     );

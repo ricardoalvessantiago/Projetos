@@ -45,7 +45,7 @@ class HeaderWithSearchBox extends StatelessWidget {
                       color: Colors.white, fontWeight: FontWeight.bold),
                 ),
                 Spacer(),
-               CircleAvatar(child: Image.asset("images/icon.png"))
+               Image.asset("images/icon.png"),
               ],
             ),
           ),
