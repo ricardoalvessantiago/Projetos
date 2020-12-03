@@ -9,4 +9,5 @@ class AppRoutes {
   static const WidgetLogin = '/WidgetLogin';
   static const HomeScreen = '/HomeScreen';
   static const Donate = '/Donate';
+  static const TakePictureScreen = '/TakePictureScreen';
 }

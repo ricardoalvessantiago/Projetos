@@ -22,7 +22,10 @@ class MyBottomNavBar extends StatelessWidget {
       ),
       height: 80,
       decoration: BoxDecoration(
-        color: Colors.white,
+        gradient: LinearGradient(colors: [
+          Colors.yellowAccent, Colors.yellow[200], Colors.yellow[300]
+        ]),
+        //color: Colors.white,
         boxShadow: [
           BoxShadow(
             offset: Offset(0, -10),
@@ -43,7 +46,7 @@ class MyBottomNavBar extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => Donate(),
+                  builder: (context) => DetailsScreen(),
                 ),
               );
             },
@@ -57,7 +60,7 @@ class MyBottomNavBar extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailsScreen(),
+                  builder: (context) => Donate(),
                 ),
               );
             },

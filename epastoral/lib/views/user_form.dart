@@ -1,7 +1,7 @@
+import 'package:epastoral/components/TakePictureScreen.dart';
 import 'package:epastoral/models/user.dart';
 import 'package:epastoral/provider/users.dart';
 import 'package:flutter/material.dart';
-
 import 'package:provider/provider.dart';
 
 class UserForm extends StatelessWidget {
@@ -72,10 +72,15 @@ class UserForm extends StatelessWidget {
                 child: IconButton(
                     icon: Icon(Icons.camera_alt),
                     color: Colors.black,
-                    onPressed: () {}),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => TakePictureScreen(camera: null),
+                        ),
+                      );
+                    }),
               ),
-
-
               Padding(
                   padding: EdgeInsets.all(15),
                   child: Form(

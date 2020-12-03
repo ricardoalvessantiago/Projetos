@@ -3,8 +3,6 @@ import 'package:epastoral/views/user_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
-import 'dashboard.dart';
 import 'my_bottom_nav_bar.dart';
 
 class Donate extends StatelessWidget {
@@ -57,15 +55,10 @@ class Donate extends StatelessWidget {
                       'assets/images/doar.png',
                       fit: BoxFit.contain,
                     ),
-
-
                   ),
-
                 ),
-
               ),
             ],
-
           ),
           Container(
             height: 120,
@@ -73,11 +66,11 @@ class Donate extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                Expanded(
-                  child: RaisedButton(
+
+                   RaisedButton(
                     highlightElevation: 50,
                     color: Colors.indigo,
-                    child: Text('FAMILIARES',
+                    child: Text('Buscar na residencia',
                         style: TextStyle(color: Colors.white)),
                     onPressed: () {
                       Navigator.push(context,
@@ -86,12 +79,12 @@ class Donate extends StatelessWidget {
                       }));
                     },
                   ),
-                ),
+
                 Expanded(
                   child: RaisedButton(
                     color: Colors.indigo,
                     child:
-                        Text('Cestas', style: TextStyle(color: Colors.white)),
+                        Text('Locias de coleta', style: TextStyle(color: Colors.white)),
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
