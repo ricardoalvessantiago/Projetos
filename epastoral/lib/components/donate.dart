@@ -84,7 +84,7 @@ class Donate extends StatelessWidget {
                   child: RaisedButton(
                     color: Colors.indigo,
                     child:
-                        Text('Locias de coleta', style: TextStyle(color: Colors.white)),
+                        Text('Locais de coleta', style: TextStyle(color: Colors.white)),
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {

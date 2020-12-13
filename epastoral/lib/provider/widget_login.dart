@@ -2,7 +2,10 @@ import 'package:epastoral/components/fadeAnimations.dart';
 import 'package:epastoral/routes/app_routes.dart';
 import 'package:epastoral/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
+
+import '../constants.dart';
 
 class WidgetLogin extends StatefulWidget {
   @override
@@ -82,7 +85,20 @@ class _WidgetLoginState extends State<WidgetLogin> {
                       1,
                       Text(
                         "Login",
-                        style: TextStyle(color: Colors.white, fontSize: 40),
+                        style: TextStyle(color: Colors.white, fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                        shadows: [
+                          BoxShadow(
+                            offset: Offset(15, 15),
+                            blurRadius: 10,
+                            color: kPrimaryColor.withOpacity(0.22),
+                          ),
+                          BoxShadow(
+                            offset: Offset(-15, -15),
+                            blurRadius: 10,
+                            color: Colors.blueGrey,
+                          ),
+                        ], ),
                       )),
                   SizedBox(
                     height: 10,
@@ -91,7 +107,20 @@ class _WidgetLoginState extends State<WidgetLogin> {
                       1.3,
                       Text(
                         "e- Pastoral",
-                        style: TextStyle(color: Colors.white, fontSize: 18),
+                        style: TextStyle(color: Colors.white, fontSize: 18,
+                          shadows: [
+                            BoxShadow(
+                              offset: Offset(15, 15),
+                              blurRadius: 2,
+                              color: kPrimaryColor.withOpacity(0.22),
+                            ),
+                            BoxShadow(
+                              offset: Offset(-15, -15),
+                              blurRadius: 5,
+                              color: Colors.blueGrey,
+                            ),
+                          ],),
+
                       )),
                 ],
               ),
@@ -228,12 +257,7 @@ class _WidgetLoginState extends State<WidgetLogin> {
                                               fontWeight: FontWeight.bold),
                                         ),
                                         onPressed: () {
-                                          Navigator.pushReplacement(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder:
-                                                      (BuildContext context) =>
-                                                          HomeScreen()));
+                                          _login();
                                         },
                                       ),
                                     ),
@@ -249,7 +273,7 @@ class _WidgetLoginState extends State<WidgetLogin> {
                                     height: 50,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(50),
-                                        color: Colors.blue.shade900),
+                                        color: Colors.white),
                                     child: Center(
                                       child: RaisedButton(
                                         color: Colors.white,
@@ -263,7 +287,7 @@ class _WidgetLoginState extends State<WidgetLogin> {
                                           Navigator.pushReplacement(
                                               context,
                                               MaterialPageRoute(
-                                                  builder:
+                                                   builder:
                                                       (BuildContext context) =>
                                                           HomeScreen()));
                                         },

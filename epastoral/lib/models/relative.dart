@@ -1,7 +1,7 @@
 import 'package:epastoral/models/user.dart';
 import 'package:flutter/cupertino.dart';
 
-class Relatives extends User {
+class Relative extends User {
 
   final String id_Rel;
   final String sobrenome;
@@ -11,7 +11,7 @@ class Relatives extends User {
 
 
 
-  const Relatives({
+  const Relative({
     this.id_Rel,
     @required this.sobrenome,
     @required this.rg,

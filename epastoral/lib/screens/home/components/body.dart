@@ -21,6 +21,7 @@ class Body extends StatelessWidget {
           TitleWithMoreBtn(title: "Faça seu cadastro", press: () {
           }),
           FeaturedBasket(),
+
           SizedBox(height: kDefaultPadding),
         ],
       ),
