@@ -28,7 +28,7 @@ class TitleWithMoreBtn extends StatelessWidget {
             onPressed:(){
               //mudar a rota para informativo para entrega cestas basicas
               Navigator.of(context).pushNamed(
-                  AppRoutes.UserList);
+                  AppRoutes.RelativeList);
             },
             child: Text(
               "Mais",

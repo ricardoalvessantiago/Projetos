@@ -11,7 +11,7 @@ class UserList extends StatelessWidget {
     final Users users = Provider.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text("Familiares"),
+        title: Text("Usuários do sistema"),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add),
