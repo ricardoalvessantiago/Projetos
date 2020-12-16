@@ -124,7 +124,7 @@ class RecomendBasketCard extends StatelessWidget {
                   ),
                   Spacer(),
                   Text(
-                    '\$$value',
+                    '\ nota\n\t\t\t 4.$value',
                     style: Theme.of(context)
                         .textTheme
                         .button

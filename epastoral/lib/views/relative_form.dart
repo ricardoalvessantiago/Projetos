@@ -2,6 +2,7 @@ import 'package:epastoral/components/TakePictureScreen.dart';
 import 'package:epastoral/provider/relatives.dart';
 import 'package:flutter/material.dart';
 import 'package:epastoral/models/relative.dart';
+import 'package:path/path.dart';
 import 'package:provider/provider.dart';
 
 class RelativeForm extends StatelessWidget {
@@ -10,6 +11,7 @@ class RelativeForm extends StatelessWidget {
 
   void _loadFormData(Relative relative) {
     if (relative != null) {
+
       _formData['id_Rel'] = relative.id_Rel;
       _formData['sobrenome'] = relative.sobrenome;
       _formData['rg'] = relative.rg;
@@ -35,11 +37,11 @@ class RelativeForm extends StatelessWidget {
                 _form.currentState.save();
                 Provider.of<Relatives>(context, listen: false).put(
                   Relative(
-                      id_Rel: _formData['id_Rel'],
-                      sobrenome: _formData['sobrenome'],
-                      rg: _formData['rg'],
-                      cpf: _formData['cpf'],
-                      endereco: _formData['endereco'],
+                    id_Rel: _formData['id_Rel'],
+                    sobrenome: _formData['sobrenome'],
+                    rg: _formData['rg'],
+                    cpf: _formData['cpf'],
+                    endereco: _formData['endereco'],
                   ),
                 );
 

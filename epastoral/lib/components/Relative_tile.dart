@@ -38,9 +38,10 @@ class RelativeTile extends StatelessWidget {
               onPressed: () {
                 Provider.of<Relatives>(context, listen: false).remove(relative);
               },
-            )
+            ),
           ],
         ),
+
       ),
     );
     ;

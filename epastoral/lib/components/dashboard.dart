@@ -10,8 +10,7 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return CarouselSlider(
       options: CarouselOptions(
-        height: 185.0,
-
+        height: 400.0,
         aspectRatio: 16 / 9,
         viewportFraction: 1.9,
         initialPage: 0,
@@ -34,6 +33,7 @@ class Dashboard extends StatelessWidget {
           ),
         )),
       ],
+
     );
   }
 }

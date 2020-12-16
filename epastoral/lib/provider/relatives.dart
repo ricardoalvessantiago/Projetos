@@ -54,6 +54,7 @@ class Relatives with ChangeNotifier {
       print("http.patch");
       await http.patch('$_baseURL/relatives/${relative.id_Rel}.json',
           body: json.encode({
+            //'nome': relative.user,
             'sobrenome': relative.sobrenome,
             'rg': relative.rg,
             'cpf': relative.cpf,
@@ -69,7 +70,7 @@ class Relatives with ChangeNotifier {
             'endereco': relative.endereco,
           }));
     }
-    //fetchUsers();
+    fetchUsers();
     notifyListeners();
   }
 
