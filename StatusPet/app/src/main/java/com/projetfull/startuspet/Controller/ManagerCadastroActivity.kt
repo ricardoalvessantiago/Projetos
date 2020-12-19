@@ -24,10 +24,6 @@ import java.io.OutputStream
 import java.util.*
 
 class ManagerCadastroActivity : AppCompatActivity() {
-
-
-
-
     var position = 0
     var type = 0
     var petyName = ""
@@ -160,5 +156,6 @@ class ManagerCadastroActivity : AppCompatActivity() {
         // Return the saved bitmap uri
         return Uri.parse(file.absolutePath)
     }
+
 
 }

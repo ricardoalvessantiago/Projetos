@@ -24,11 +24,10 @@ import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
-    companion object{
+    companion object {
         const val CAMERA_PERMISSION_CODE = 1
         private const val CAMERA_REQUEST_CODE = 2
     }
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         btnCarregarImg.setOnClickListener {
             if (ContextCompat.checkSelfPermission(
                     this,
-                   android.Manifest.permission.CAMERA
+                    android.Manifest.permission.CAMERA
                 ) == PackageManager.PERMISSION_GRANTED
             ) {
                 val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
@@ -45,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             } else {
                 ActivityCompat.requestPermissions(
                     this,
-                    arrayOf( android.Manifest.permission.CAMERA),
+                    arrayOf(android.Manifest.permission.CAMERA),
                     CAMERA_PERMISSION_CODE
                 )
             }

@@ -9,9 +9,14 @@
     <color name="transparent">#0000</color>
     <color name="white">#fff</color>
     <color name="black">#000</color>
+    <color name="black80">#1a1a1a</color>
+    <color name="black50">#272525</color>
+    <color name="greyLigth">#eeeeee</color>
     <color name="blue">#00f</color>
     <color name="red">#f00</color>
     <color name="green">#0f0</color>
+    <color name="green40">#920EC115</color>
     <color name="yellow">#fff000</color>
     <color name="gray">#cccccc</color>
+    <color name="orange">#FF9800</color>
 </resources>

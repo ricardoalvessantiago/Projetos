@@ -7,4 +7,6 @@
     <string name="aRaca">Raça</string>
     <string name="aCor">Cor</string>
     <string name="aSexo">Sexo</string>
+    <string name="todo">TODO</string>
+    <string name="cadastro">É novo por aqui? Cadastre seu pet agora. </string>
 </resources>

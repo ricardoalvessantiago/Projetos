@@ -77,7 +77,7 @@ object DataStore {
                 val iterator = it.lineSequence().iterator()
                 while (iterator.hasNext()){
 
-                    val autor = iterator.next()
+                    //val autor = iterator.next()
 
                 }
 
