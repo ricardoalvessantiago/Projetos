@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">StatusPet</string>
-    <string name="filename_animais">file animais</string>
+
     <string name="aNome">Nome</string>
     <string name="aEspecie">Espécie</string>
     <string name="aData">Data de Nasc</string>
@@ -9,4 +9,10 @@
     <string name="aSexo">Sexo</string>
     <string name="todo">TODO</string>
     <string name="cadastro">É novo por aqui? Cadastre seu pet agora. </string>
+
+    <!--chaves do arquivo do preferêcia-->
+    <string name="filename_animais">file animais</string>
+    <string name="pref_login">login</string>
+    <string name="pref_password">password</string>
+    <string name="pref_remember">remember</string>
 </resources>

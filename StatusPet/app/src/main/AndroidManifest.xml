@@ -5,7 +5,6 @@
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
@@ -19,11 +18,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Controller.FormLogin"></activity>
+        <activity android:name=".Controller.MainActivity"/>
         <activity android:name=".Controller.ManagerCadastroActivity" />
-        <activity android:name=".Controller.MainActivity" />
+
         <activity android:name=".Controller.Transition">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
+
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

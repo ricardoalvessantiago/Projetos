@@ -8,5 +8,5 @@ class Animal(
     var cor: String,
 ) {
 
-    var id = 0
+    var id: Long = 0
 }

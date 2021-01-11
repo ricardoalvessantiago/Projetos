@@ -7,6 +7,15 @@
         <item name="colorAccent">@color/colorAccent</item>-->
 
     </style>
+    <!-- Configurações da CollapsinToolbar -->
+    <style name="AppTheme.CollapsinToolbarCollapsed" parent="@android:style/TextAppearance">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="AppTheme.CollapsinToolbarExpanded" parent="@android:style/TextAppearance">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
     <style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Cor primária do aplicativo -->
         <item name="colorPrimary">@color/primary</item>
