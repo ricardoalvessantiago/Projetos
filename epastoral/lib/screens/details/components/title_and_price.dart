@@ -41,13 +41,14 @@ class TitleAndPrice extends StatelessWidget {
             ),
           ),
           Spacer(),
-          Text(
+          Icon(Icons.account_balance_outlined)
+          /*Text(
             "\ nota\n\t\t\t 4.$price",
             style: Theme.of(context)
                 .textTheme
                 .headline5
                 .copyWith(color: kPrimaryColor),
-          )
+          )*/
         ],
       ),
     );

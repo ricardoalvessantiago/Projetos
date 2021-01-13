@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
 
   AppBar buildAppBar() {
     return AppBar(
-      elevation: 0,
+      elevation: 10,
       leading: IconButton(
         icon: SvgPicture.asset("assets/icons/menu.svg"),
         onPressed: () {},

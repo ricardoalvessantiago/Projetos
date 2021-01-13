@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -19,7 +20,9 @@ class FormLogin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form_login)
+       VerificarUsuarioLogado()
         supportActionBar!!.hide()
+
         text_cadastrar.setOnClickListener{
             val intent = Intent(this, FormCadastro::class.java)
             startActivity(intent)
@@ -37,12 +40,7 @@ class FormLogin : AppCompatActivity() {
         }
     }
 
-    //navegação para a tela de cadastro
-    private fun AbrirTelaDeCadastro() {
-        // var intent = Intent(this, ManagerCadastroActivity::class.java)
-        startActivity(intent)
-        finish()
-    }
+
 
     fun btnSigninOnClick(view: View) {
         val login = EmailAddress.text.toString()
@@ -67,9 +65,6 @@ class FormLogin : AppCompatActivity() {
             }
             AutenticarUsuario()
 
-            /*val intent = Intent(this, ManagerCadastroActivity::class.java)
-            startActivity(intent)
-            finish()*/
         }else{
             val dialog = AlertDialog.Builder(this)
             dialog.setTitle("Erro")
@@ -92,7 +87,8 @@ class FormLogin : AppCompatActivity() {
             FirebaseAuth.getInstance().signInWithEmailAndPassword(login, password).addOnCompleteListener {
                 if(it.isSuccessful){
                     framel.visibility = View.VISIBLE
-                    AbrirTelaPrincipal()
+                    Handler().postDelayed({AbrirTelaPrincipal()}, 3000)
+
                 }
             }.addOnFailureListener{
                 var snackbar = Snackbar.make(layout_login,"Erro ao logar usuário", Snackbar.LENGTH_INDEFINITE).setBackgroundTint(
@@ -105,6 +101,12 @@ class FormLogin : AppCompatActivity() {
             }
         }
 
+    }
+    private fun VerificarUsuarioLogado(){
+        val usuarioAtual = FirebaseAuth.getInstance().currentUser
+        if(usuarioAtual != null){
+            AbrirTelaPrincipal()
+        }
     }
     private fun AbrirTelaPrincipal(){
         var intent = Intent(this, TelaPrincipal::class.java)

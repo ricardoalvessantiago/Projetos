@@ -56,7 +56,10 @@ class Body extends StatelessWidget {
                   color: kTextColor
                   ,
                   onPressed: () {
-
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Donate()),);
                   },
                   child: Text("Descrição"),
                 ),

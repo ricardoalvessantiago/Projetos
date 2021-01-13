@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../constants.dart';
-
+//função ainda não habilitada
 class HeaderWithSearchBox extends StatelessWidget {
   const HeaderWithSearchBox({
     Key key,
@@ -29,8 +29,8 @@ class HeaderWithSearchBox extends StatelessWidget {
             decoration: BoxDecoration(
                 gradient: LinearGradient(begin: Alignment.topCenter, colors: [
                   Colors.blue[900],
-                  Colors.blue[700],
-                  Colors.blue[300]
+                  Colors.blue[800],
+                  Colors.blue[400]
                 ]),
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(36),

@@ -15,8 +15,7 @@ class IconCard extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: size.height * 0.03),
-      padding: EdgeInsets.all(kDefaultPadding / 2),
+      margin: EdgeInsets.symmetric(vertical: size.height * 0.025),
       height: 62,
       width: 62,
       decoration: BoxDecoration(
@@ -24,7 +23,7 @@ class IconCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(6),
         boxShadow: [
           BoxShadow(
-            offset: Offset(0, 15),
+            offset: Offset(5, 5),
             blurRadius: 22,
             color: kPrimaryColor.withOpacity(0.22),
           ),
@@ -33,7 +32,7 @@ class IconCard extends StatelessWidget {
             blurRadius: 20,
             color: Colors.blueGrey,
           ),
-        ],
+        ]
       ),
       child: SvgPicture.asset(icon),
     );

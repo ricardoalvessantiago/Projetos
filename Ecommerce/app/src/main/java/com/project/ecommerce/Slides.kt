@@ -31,7 +31,6 @@ class Slides : IntroActivity(){
                 .canGoBackward(false)
                 .description("Cadastre-se agora mesmo! E venha conhecer os nossos produtos.")
                 .build()
-
         )
     }
 
