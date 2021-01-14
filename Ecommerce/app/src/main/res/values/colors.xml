@@ -11,7 +11,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="gray">#080851</color>//mudança de cor
+    <color name="gray">#080851</color>//mudar essa cor
     <color name="gelo">#8BFFFFFF</color>
+    <color name="cinzaClaro">#f2f0f0</color>
 
 </resources>

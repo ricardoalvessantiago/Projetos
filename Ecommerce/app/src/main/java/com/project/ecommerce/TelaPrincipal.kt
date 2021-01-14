@@ -13,6 +13,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.project.ecommerce.Form.FormLogin
+import com.project.ecommerce.Fragments.CadastroProdutos
 import com.project.ecommerce.Fragments.Produtos
 
 class TelaPrincipal : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -42,6 +43,8 @@ class TelaPrincipal : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         if (id == R.id.nav_produto){
             telaProdutos()
         }else if (id == R.id.nav_cadastrar_produto){
+            var intent = Intent(this, CadastroProdutos::class.java)
+            startActivity(intent)
 
         }else if(id == R.id.nav_contato){
 
