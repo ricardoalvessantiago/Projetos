@@ -18,11 +18,9 @@ class FormCadastro : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form_cadastro)
         supportActionBar!!.hide()
-
         bt_cadastrar.setOnClickListener {
             CadastrarUsuario()
         }
-
     }
 
     private fun CadastrarUsuario() {

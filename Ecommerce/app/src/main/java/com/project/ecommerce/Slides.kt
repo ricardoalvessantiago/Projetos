@@ -20,7 +20,7 @@ class Slides : IntroActivity(){
                 .background(R.color.purple_700)
                 .backgroundDark(R.color.white)
                 .image(R.drawable.drawer)
-                .title("Loja Online de Smartwach")
+                .title("Loja Online")
                 .description("Entre e confira as promoções que preparamos  para você!")
                 .build()
         )
