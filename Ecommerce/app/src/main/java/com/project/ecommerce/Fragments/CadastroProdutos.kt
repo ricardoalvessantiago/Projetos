@@ -15,8 +15,6 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 
 
-
-
 class CadastroProdutos : AppCompatActivity() {
 
     var SelecionarUri: Uri? = null
@@ -56,10 +54,10 @@ class CadastroProdutos : AppCompatActivity() {
         val referencia = FirebaseStorage.getInstance().getReference(
                 "/imagens/${nomeArquivo}")
 
-        SelecionarUri?.let{
+        SelecionarUri?.let {
 
             referencia.putFile(it)
-                    .addOnSuccessListener{
+                    .addOnSuccessListener {
                         referencia.downloadUrl.addOnSuccessListener {
 
                             val url = it.toString()
@@ -67,19 +65,17 @@ class CadastroProdutos : AppCompatActivity() {
                             val preco = edit_preço.text.toString()
                             val uid = FirebaseAuth.getInstance().uid
 
-                            val Produtos = Dados(url,nome,preco)
+                            val Produtos = Dados(url, nome, preco)
                             FirebaseFirestore.getInstance().collection("Produtos")
                                     .add(Produtos)
                                     .addOnSuccessListener {
-
-                                        Toast.makeText(this,"Produto cadastrado com sucesso!",Toast.LENGTH_SHORT).show()
-
+                                        Toast.makeText(this, "Produto cadastrado com sucesso!", Toast.LENGTH_SHORT).show()
                                     }.addOnFailureListener {
 
                                     }
 
                         }
-            }
+                    }
         }
     }
 }
