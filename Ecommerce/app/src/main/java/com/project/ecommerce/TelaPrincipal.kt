@@ -47,6 +47,7 @@ class TelaPrincipal : AppCompatActivity(), NavigationView.OnNavigationItemSelect
             startActivity(intent)
 
         }else if(id == R.id.nav_contato){
+            sendEmail()
 
         }
         val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
@@ -80,5 +81,18 @@ class TelaPrincipal : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         val fragment = supportFragmentManager.beginTransaction()
         fragment.replace(R.id.frameContainer, produtosFrament)
         fragment.commit()
+    }
+
+    private fun sendEmail(){
+        val PACKAGEM_GOOGLEMAIL = "com.google.android.gm"
+        val email = Intent(Intent.ACTION_SEND)
+        email.putExtra(Intent.EXTRA_EMAIL, arrayOf("")) //send a e-mail
+        email.putExtra(Intent.EXTRA_SUBJECT, "")
+        email.putExtra(Intent.EXTRA_TEXT, "")    // send body text e-mail
+
+        email.type = "messafe/rec822"
+        email.setPackage(PACKAGEM_GOOGLEMAIL)
+        startActivity(Intent.createChooser(email, "Escolha o app de e-mail"))
+
     }
 }
