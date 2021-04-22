@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.afollestad.materialdialogs.MaterialDialog
 import com.google.firebase.firestore.FirebaseFirestore
 import com.project.ecommerce.Model.Dados
 import com.project.ecommerce.R
@@ -46,6 +47,9 @@ class Produtos : Fragment() {
 
                 if(pay == "249,90"){
                     Toast.makeText(context, "Pagamento Realizado!", Toast.LENGTH_SHORT).show()
+                    /*MaterialDialog.Builder(this!!.context!!)
+                        .title("Pagamento concluído")
+                        .content("Obrigado! Volte sempre.")*/
                 }else{
                     Toast.makeText(context, "Pagamento Recusado", Toast.LENGTH_SHORT).show()
                 }
