@@ -1,5 +1,5 @@
-name: DevQuiz
-description: DevQuiz - Ricardo DEV
+name: dev_quiz
+description: DevQuiz  Ricardo DEV
 version: 1.0.0+1
 
 environment:
